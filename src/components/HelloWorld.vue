@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
-    <button @click="showModal = true">モーダルを開く</button>
-    <scrollable-modal v-model="showModal" />
+    <div class="buttons">
+      <button @click="showModal = true">モーダル(overflow: hidden版)を開く</button>
+      <scrollable-modal v-model="showModal" />
+      <button @click="showModal2 = true">モーダル(overscroll-behavior版)を開く</button>
+      <scrollable-modal2 v-model="showModal2" />
+    </div>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -35,18 +39,21 @@
 
 <script>
 import ScrollableModal from './ScrollableModal.vue';
+import ScrollableModal2 from './ScrollableModal2.vue';
 
 export default {
   name: 'HelloWorld',
   components: {
-    ScrollableModal
+    ScrollableModal,
+    ScrollableModal2
   },
   props: {
     msg: String
   },
   data () {
     return {
-      showModal: false
+      showModal: false,
+      showModal2: false
     }
   }
 }
@@ -67,5 +74,12 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 </style>

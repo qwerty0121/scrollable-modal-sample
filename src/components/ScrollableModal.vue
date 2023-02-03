@@ -13,7 +13,7 @@
       >
         <div class="modal-content">
           <div class="modal-content__header">
-            <span class="modal-content__title">スクロール可能モーダル</span>
+            <span class="modal-content__title">スクロール可能モーダル(overflow: hidden版)</span>
           </div>
           <div class="modal-content__body">
             <div class="item-container">
